@@ -1,0 +1,21 @@
+{
+  "generator-sap-partner-eng": {
+    "project_name": "hccap1",
+    "app_name": "hccap1",
+    "app_desc": "hccap1",
+    "router_name": "hccap1-web",
+    "router_dir": "web",
+    "uaa_res_name": "hccap1-uaa",
+    "uaa_svc_name": "HCCAP1_UAA",
+    "db_name": "hccap1-hdb",
+    "db_dir": "db",
+    "db_schema_name": "HCCAP1_DB",
+    "hdi_res_name": "hccap1-hdi",
+    "hdi_svc_name": "HCCAP1_HDI",
+    "srv_name": "hccap1-srv",
+    "srv_dir": "srv",
+    "srv_api": "hccap1_srv_api",
+    "srv_be": "hccap1_srv_be",
+    "srv_route": "catalog"
+  }
+}

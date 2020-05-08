@@ -1,0 +1,68 @@
+ID: hccap1
+_schema-version: '2.1'
+description: hccap1
+version: 0.0.1
+
+modules:
+
+### New Modules Here ###
+
+ - name: hccap1-hdb
+   type: hdb
+   path: db
+   parameters:
+      memory: 512M
+      disk-quota: 512M
+   requires:
+    - name: hccap1-hdi
+
+ - name: hccap1-srv
+   type: nodejs
+   path: srv
+   parameters:
+      memory: 512M
+      disk-quota: 512M
+   provides:
+    - name: hccap1_srv_api
+      properties:
+         url: ${default-url}
+   requires:
+    - name: hccap1-hdi
+    - name: hccap1-uaa
+
+
+ - name: hccap1-web
+   type: html5
+   path: web
+   parameters:
+      disk-quota: 256M
+      memory: 256M
+   requires:
+    - name: hccap1-uaa
+   ### New Destinations Here ###
+    - name: hccap1_srv_api
+      group: destinations
+      properties:
+         name: hccap1_srv_be
+         url: ~{url}
+         forwardAuthToken: true
+
+resources:
+
+### New Resources Here ###
+
+ - name: hccap1-hdi
+   type: com.sap.xs.hdi-container
+   parameters:
+      service-name: HCCAP1_HDI
+      config:
+         schema: HCCAP1_DB
+
+ - name: hccap1-uaa
+   parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+      service-name: HCCAP1_UAA
+   type: org.cloudfoundry.managed-service
+
