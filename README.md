@@ -49,7 +49,11 @@ cf login -u <email> -p '<password>' -o <Org> -s <space>
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 
+git commit -am "wip"
+
 git remote
-git
 git checkout -b uaacheck
 git push -u origin uaacheck/new-feature-check_uaa
+
+git branch
+git push
