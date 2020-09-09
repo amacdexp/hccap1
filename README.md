@@ -40,3 +40,16 @@ cf undeploy hccap1 -f --delete-services
 
 cf api https://api.cf.sap.hana.ondemand.com
 cf login -u <email> -p '<password>' -o <Org> -s <space>
+
+
+
+
+---- Other common used
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+git remote
+git
+git checkout -b uaacheck
+git push -u origin uaacheck/new-feature-check_uaa

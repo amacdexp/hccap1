@@ -12,6 +12,12 @@
       "authenticationType": "xsuaa"
     },
     {
+      "source": "(services/)(.*)",
+      "destination": "hccap1_srv_be",
+      "csrfProtection": true,
+      "authenticationType": "xsuaa"
+    },
+    {
       "localDir": "resources",
       "source": "^/(.*)",
       "authenticationType": "none"

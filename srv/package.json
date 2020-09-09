@@ -5,7 +5,14 @@
   "dependencies": {
     "@sap/cds": "^3.13.0",
     "express": "^4.17.1",
-    "hdb": "^0.17.1"
+    "hdb": "^0.17.1",
+    "@sap/xssec": "latest",
+    "@sap/hdbext": "latest",
+    "@sap/hana-client": "latest",
+    "passport": "^0.4.0",
+    "stringify-object": "latest",
+    "nodemon": "latest",
+    "body-parser": "latest"
   },
   "engines": {
     "node": "^12.14"
@@ -13,7 +20,7 @@
   "devDependencies": {},
   "scripts": {
     "postinstall": "npm dedupe && node .build.js",
-    "start": "node ./node_modules/@sap/cds/bin/cds.js serve gen/csn.json",
+    "start": "node ./node_modules/@sap/cds/bin/cds.js serve gen/csn.json ;   nodemon server.js",
     "watch": "nodemon -w . -i node_modules/**,.git/** -e cds -x npm run build"
   },
   "private": true,

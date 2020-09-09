@@ -16,6 +16,7 @@ modules:
    requires:
     - name: hccap1-hdi
 
+# cf push hccap1-srv -p srv -n ${org}-${space}-hccap1-srv -d cfapps.us10.hana.ondemand.com -k 1024M -m 512M
  - name: hccap1-srv
    type: nodejs
    path: srv
