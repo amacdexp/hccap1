@@ -6,7 +6,7 @@
   "license": "ISC",
   "dependencies": {
     "@sap/cds": "^3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "hdb": "^0.17.1"
   },
   "engines": {
